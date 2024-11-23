@@ -89,7 +89,7 @@ else()
   # Check if we are using pthreads.
   find_package(Threads)
   # 'CMAKE_HAVE_LIBC_PTHREAD' handles the case when glibc contains pthreads.
-  if (CMAKE_HAVE_PTHREAD_H STREQUAL "YES" OR CMAKE_HAVE_LIBC_PTHREAD STREQUAL "YES")
+  if (CMAKE_HAVE_PTHREAD_H OR CMAKE_HAVE_LIBC_PTHREAD)
     set(HAVE_LIBPTHREAD 1)
     set(HAVE_PTHREAD 1)
     set(HAVE_RWLOCK 1)
